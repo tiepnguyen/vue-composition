@@ -12,7 +12,8 @@ jobs:
           node-version: '12.x'
       - run: npm install
       - run: npm test
-      - run: VUE_APP_VERSION=$APP_VERSION npm run build
+      - name: Build
+        run: VUE_APP_VERSION=$APP_VERSION npm run build
         env:
           APP_VERSION: ${{ secrets.VERSION }}
 
